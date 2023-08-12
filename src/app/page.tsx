@@ -3,17 +3,19 @@
 import Image from 'next/image'
 import React, { useState } from "react";
 
+const API_URL = 'http://localhost:3001';
+
 export default function Home() {
 
-  const [username, setUsername] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+  const handleLoginSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
       e.preventDefault();
+      const { elements } = e.currentTarget;
 
-      fetch("http://localhost:3001/github/dummy/login", {
+      fetch(`${API_URL}/github/dummy/login`, {
           body: JSON.stringify({
-            'username': username,
+            'username': (elements.namedItem("username") as HTMLInputElement).value,
           }),
           method: 'post',
           headers: {
@@ -22,10 +24,38 @@ export default function Home() {
           },
       }).then(async (result) => {
         console.log('result', result)
+        //console.log(document.cookie)
 
         if (result.status == 200) {
           setIsLoggedIn(true);
         }
+      });
+  }
+
+  const handleBountySubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+      e.preventDefault();
+      const { elements } = e.currentTarget;
+
+      const data = {
+        reward: (elements.namedItem("reward") as HTMLInputElement).value,
+        owner: (elements.namedItem("owner") as HTMLInputElement).value,
+        repo: (elements.namedItem("repo") as HTMLInputElement).value,
+        issue: (elements.namedItem("issue") as HTMLInputElement).value,
+      }
+
+      console.log("creating bounty", data);
+
+      fetch(`${API_URL}/bounty`, {
+          body: JSON.stringify(data),
+          method: 'post',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          credentials: 'include',
+      }).then(async (result) => {
+        console.log('result', result)
+
       });
   }
 
@@ -47,13 +77,25 @@ export default function Home() {
         Login
       </div>
 
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleLoginSubmit}>
       <label for="username">Username</label>
       <input type="text" id="username" name="username" />
       <button type="submit">Submit</button>
     </form>
 
     {isLoggedIn ? <div>Logged In</div> : <div>Not Logged In</div>}
+
+    <form onSubmit={handleBountySubmit}>
+      <label for="reward">reward</label>
+      <input type="text" id="reward" name="reward" />
+      <label for="owner">owner</label>
+      <input type="text" id="owner" name="owner" />
+      <label for="repo">repo</label>
+      <input type="text" id="repo" name="repo" />
+      <label for="issue">issue</label>
+      <input type="text" id="issue" name="issue" />
+      <button type="submit">Submit</button>
+    </form>
 
     </main>
   )
