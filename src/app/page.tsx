@@ -3,8 +3,8 @@
 import Image from 'next/image'
 import React, { useState } from "react";
 
-const API_URL = 'http://localhost:3001';
 
+const API_URL = 'https://gitbounties.io:3001';
 export default function Home() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -22,6 +22,7 @@ export default function Home() {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
           },
+          credentials: 'include',
       }).then(async (result) => {
         console.log('result', result)
         //console.log(document.cookie)
@@ -37,15 +38,18 @@ export default function Home() {
       const { elements } = e.currentTarget;
 
       const data = {
-        reward: (elements.namedItem("reward") as HTMLInputElement).value,
+        reward: parseInt((elements.namedItem("reward") as HTMLInputElement).value),
+      }
+
+      const query = new URLSearchParams({
         owner: (elements.namedItem("owner") as HTMLInputElement).value,
         repo: (elements.namedItem("repo") as HTMLInputElement).value,
-        issue: (elements.namedItem("issue") as HTMLInputElement).value,
-      }
+        issue: parseInt((elements.namedItem("issue") as HTMLInputElement).value),
+      });
 
       console.log("creating bounty", data);
 
-      fetch(`${API_URL}/bounty`, {
+      fetch(`${API_URL}/bounty?` + query, {
           body: JSON.stringify(data),
           method: 'post',
           headers: {
