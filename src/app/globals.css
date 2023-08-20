@@ -16,6 +16,13 @@
   }
 }
 
+@font-face {
+  font-family: "Hyperion";
+  src: url('../../font/hyperion/Hyperion\ Bold.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
