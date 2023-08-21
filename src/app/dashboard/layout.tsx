@@ -1,3 +1,6 @@
+"use client";
+
+import { MetamaskStateProvider } from "use-metamask";
 import "./style.css";
 import Link from "next/link";
 
