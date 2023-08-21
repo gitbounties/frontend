@@ -6,9 +6,18 @@
 
 ## Running for development
 
-First, run the development server:
-
+Install dev tools
+```sh
+npm i -g prettier
 ```
+
+Install dependencies
+```sh
+npm i
+```
+
+First, run the development server:
+```sh
 npm run dev
 ```
 
