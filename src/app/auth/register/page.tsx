@@ -1,20 +1,23 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
+import { RedirectType } from "next/dist/client/components/redirect";
 
 export default function Page() {
+  const { push } = useRouter();
   const searchParams = useSearchParams();
+  const code = searchParams.get("code") ?? "";
 
   useEffect(() => {
     const request = async () => {
       // TODO error handling for when searchParams code is null/malformed
       const query = new URLSearchParams({
-        code: searchParams.get("code") ?? "",
+        code: code,
       });
 
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/github/callback/register` + query,
+        `${process.env.NEXT_PUBLIC_API_URL}/github/callback/register?` + query,
         {
           method: "get",
           headers: {
@@ -25,10 +28,13 @@ export default function Page() {
       );
 
       console.log(res);
+      if (res.status == 200) {
+        push("/dashboard/contributor");
+      }
     };
 
     request().catch(console.error);
-  }, []);
+  }, [code]);
 
   return (
     <>
