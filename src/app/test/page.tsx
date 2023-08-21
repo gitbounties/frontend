@@ -7,6 +7,7 @@ export default function Page() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const [issues, setIssues] = useState([]);
+  const [bounties, setBounties] = useState([]);
 
   const handleLoginSubmit = async (
     e: React.FormEvent<HTMLFormElement>
@@ -74,7 +75,26 @@ export default function Page() {
   ): Promise<void> => {
     e.preventDefault();
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/issue?`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/issue`, {
+      method: "get",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+    });
+
+    const body = await res.json();
+
+    console.log("body", body);
+  };
+
+  const handleGetBounties = async (
+    e: React.FormEvent<HTMLFormElement>
+  ): Promise<void> => {
+    e.preventDefault();
+
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/bounty`, {
       method: "get",
       headers: {
         Accept: "application/json",
@@ -125,6 +145,12 @@ export default function Page() {
 
       <form onSubmit={handleGetIssues}>
         <button type="submit">Get Issues</button>
+      </form>
+
+      <hr />
+
+      <form onSubmit={handleGetBounties}>
+        <button type="submit">Get Bounites</button>
       </form>
     </>
   );
