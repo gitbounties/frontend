@@ -1,12 +1,15 @@
 import "./style.css";
-import type { ReactNode } from "react";
 import Link from "next/link";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <main
       className="main"
-      style={{ backgroundColor: "black", height: "100vh", maxWidth: "100%" }}
+      style={{
+        backgroundColor: "white",
+        height: "100vh",
+        maxWidth: "100%",
+      }}
     >
       <div className="wrapper">
         <div
