@@ -1,5 +1,8 @@
 import "./style.css";
 import Link from "next/link";
+import Image from "next/image";
+import maintainerIcon from "../../../public/maintainer.svg";
+import contributorIcon from "../../../public/contributor.svg";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -29,9 +32,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           >
             <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
             <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
-            <span className="relative text-black group-hover:text-white">
+            <button
+              className="relative text-black group-hover:text-white"
+              style={{ display: "flex" }}
+            >
+              <Image
+                src={maintainerIcon}
+                alt={""}
+                height={15}
+                width={20}
+                objectFit="contain"
+              />
               Maintainer
-            </span>
+            </button>
           </Link>
           <Link
             href="/dashboard/contributor"
@@ -39,7 +52,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           >
             <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
             <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
-            <span className="relative text-black group-hover:text-white">
+            <span
+              className="relative text-black group-hover:text-white"
+              style={{ display: "flex" }}
+            >
+              <Image
+                src={contributorIcon}
+                alt={""}
+                height={15}
+                width={20}
+                objectFit="contain"
+              />
               Contributor
             </span>
           </Link>
