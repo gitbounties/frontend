@@ -111,7 +111,7 @@ export default function Home() {
         style={{ marginBottom: "10vh" }}
         onClick={() => {
           window.location.href =
-            "https://github.com/login/oauth/authorize?client_id=Iv1.95276d06092540d3";
+            `https://github.com/login/oauth/authorize?client_id=Iv1.95276d06092540d3&redirect_uri={process.env.APP_URL}/auth/register`;
         }}
       >
         <svg

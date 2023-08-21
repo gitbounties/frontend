@@ -16,6 +16,11 @@ Set up git hooks
 npm run devsetup
 ```
 
+Create local copy of environment variables
+```sh
+cp .env-example .env.local
+```
+
 Install dependencies
 ```sh
 npm i
