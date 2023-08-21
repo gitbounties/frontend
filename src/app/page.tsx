@@ -85,6 +85,9 @@ export default function Home() {
     console.log("bounties", bounties);
   };
 
+  const GITHUB_REGISTER_URL =  `https://github.com/login/oauth/authorize?client_id=Iv1.95276d06092540d3&redirect_uri=${process.env.NEXT_PUBLIC_APP_URL}/auth/register`;
+  console.log(GITHUB_REGISTER_URL);
+
   return (
     <main
       className="flex min-h-screen flex-col items-center justify-between p-24"
@@ -110,8 +113,7 @@ export default function Home() {
         className="py-2 px-4 max-w-md flex justify-center items-center bg-gray-600 hover:bg-gray-700 focus:ring-gray-500 focus:ring-offset-gray-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
         style={{ marginBottom: "10vh" }}
         onClick={() => {
-          window.location.href =
-            `https://github.com/login/oauth/authorize?client_id=Iv1.95276d06092540d3&redirect_uri={process.env.APP_URL}/auth/register`;
+          window.location.href = GITHUB_REGISTER_URL;
         }}
       >
         <svg
