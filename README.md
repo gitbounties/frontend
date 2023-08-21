@@ -11,6 +11,11 @@ Install dev tools
 npm i -g prettier
 ```
 
+Set up git hooks
+```sh
+npm run devsetup
+```
+
 Install dependencies
 ```sh
 npm i
