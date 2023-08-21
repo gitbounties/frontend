@@ -98,7 +98,7 @@ export default function Home() {
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       ></link>
 
-      <div
+      <a
         style={{
           fontFamily: "Hyperion",
           fontSize: 100,
@@ -107,7 +107,7 @@ export default function Home() {
         }}
       >
         GITBOUNTIES
-      </div>
+      </a>
       <button
         type="button"
         className="py-2 px-4 max-w-md flex justify-center items-center bg-gray-600 hover:bg-gray-700 focus:ring-gray-500 focus:ring-offset-gray-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"

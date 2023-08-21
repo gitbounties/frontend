@@ -5,6 +5,61 @@ import { useState } from "react";
 export default function App() {
   const [query, setQuery] = useState("");
 
+  const issueItem = (
+    owner: string,
+    repository: string,
+    user: string,
+    reward: string,
+    // we don't need status because all the issues here should be open
+    title: string,
+    label: string,
+    description: string,
+    dateCreated: string,
+    pfp: string
+  ) => {
+    return (
+      <tr
+        style={{ cursor: "pointer" }}
+        onClick={(e) => {
+          window.location.href =
+            "https://github.com/MrPicklePinosaur/shrs/issues/240";
+        }}
+      >
+        <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+          <div className="flex items-center">
+            <div className="flex-shrink-0 h-10 w-10">
+              <img className="h-10 w-10 rounded-full" src={pfp} alt="" />
+            </div>
+            <div className="ml-4">
+              <div className="text-sm leading-5 font-medium text-gray-900">
+                {user}
+              </div>
+            </div>
+          </div>
+        </td>
+        <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+          <div className="text-sm leading-5 text-gray-900">
+            {owner}/{repository}
+          </div>
+        </td>
+        <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+          <div className="text-sm leading-5 text-gray-900">
+            [{label}]{title}
+          </div>
+          <div className="text-sm leading-5 text-gray-500">{description}</div>
+        </td>
+        <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+          <div className="text-sm leading-5 text-gray-900">{dateCreated}</div>
+        </td>
+        <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+          <div className="text-sm leading-5 text-gray-900">
+            {reward.toString()}
+          </div>
+        </td>
+      </tr>
+    );
+  };
+
   return (
     <div
       style={{
@@ -39,32 +94,79 @@ export default function App() {
         </button>
       </div>
       <div>
-        {Data.filter((post) => {
-          if (query === "") {
-            return post;
-          } else if (
-            post.repository.toLowerCase().includes(query.toLowerCase()) ||
-            post.dateCreated.toLowerCase().includes(query.toLowerCase()) ||
-            post.money.toLowerCase().includes(query.toLowerCase())
-          ) {
-            return post;
-          }
-        }).map((post) => (
-          <div
-            style={{
-              textAlign: "left",
-              border: "black ridge 1px",
-              borderRadius: "10px",
-              margin: "3px",
-              width: "20rem",
-              paddingLeft: "10px",
-            }}
-          >
-            <p>Repository: {post.repository}</p>
-            <p>Date Created: {post.dateCreated}</p>
-            <p>Money: {post.money}</p>
+        <div className="flex flex-col">
+          <div className="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+            <div className="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
+              <table className="min-w-full">
+                <thead>
+                  <tr>
+                    <th className="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                      Github Username
+                    </th>
+                    <th className="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                      Repository
+                    </th>
+                    <th className="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                      Issue
+                    </th>
+                    <th className="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                      Date Created
+                    </th>
+                    <th className="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                      Reward
+                    </th>
+                    <th className="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
+                  </tr>
+                </thead>
+                {Data.filter((post) => {
+                  if (query === "") {
+                    return post;
+                  } else if (
+                    post.owner.toLowerCase().includes(query.toLowerCase()) ||
+                    post.repository
+                      .toLowerCase()
+                      .includes(query.toLowerCase()) ||
+                    post.user.toLowerCase().includes(query.toLowerCase()) ||
+                    post.reward.toLowerCase().includes(query.toLowerCase()) ||
+                    post.title.toLowerCase().includes(query.toLowerCase()) ||
+                    post.label.toLowerCase().includes(query.toLowerCase()) ||
+                    post.description
+                      .toLowerCase()
+                      .includes(query.toLowerCase()) ||
+                    post.dateCreated.toLowerCase().includes(query.toLowerCase())
+                  ) {
+                    return post;
+                  }
+                }).map((post) => (
+                  // <div
+                  //   style={{
+                  //     textAlign: "left",
+                  //     border: "black ridge 1px",
+                  //     borderRadius: "10px",
+                  //     margin: "3px",
+                  //     // width: "20rem",
+                  //     paddingLeft: "10px",
+                  //   }}
+                  // >
+                  <tbody className="bg-white">
+                    {issueItem(
+                      post.owner,
+                      post.repository,
+                      post.user,
+                      post.reward,
+                      post.title,
+                      post.label,
+                      post.description,
+                      post.dateCreated,
+                      "https://avatars.githubusercontent.com/u/45017130?s=400&u=fca9f286318fbbe286f7a8c29cc0c040402c6df7&v=4"
+                    )}
+                  </tbody>
+                  // </div>
+                ))}
+              </table>
+            </div>
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );
