@@ -1,5 +1,6 @@
 "use client";
 
+import { IWeb3Context, useWeb3Context } from "@/context/Web3ContextProvider";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -8,6 +9,12 @@ export default function Page() {
 
   const [issues, setIssues] = useState([]);
   const [bounties, setBounties] = useState([]);
+
+  const {
+    connectWallet,
+    disconnect,
+    state: { isAuthenticated, address, currentChain, provider },
+  } = useWeb3Context() as IWeb3Context;
 
   const handleLoginSubmit = async (
     e: React.FormEvent<HTMLFormElement>
@@ -111,6 +118,19 @@ export default function Page() {
   return (
     <>
       <h1>Login</h1>
+
+      <hr />
+      {!isAuthenticated ? (
+        <button onClick={connectWallet}>Connect Metamask</button>
+      ) : (
+        <>
+          <button onClick={disconnect}>Disconnect Metamask</button>
+          <div>
+            <p>{address}</p>
+            <p>{currentChain}</p>
+          </div>
+        </>
+      )}
 
       <hr />
 
