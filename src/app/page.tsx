@@ -85,7 +85,7 @@ export default function Home() {
     console.log("bounties", bounties);
   };
 
-  const GITHUB_REGISTER_URL =  `https://github.com/login/oauth/authorize?client_id=Iv1.95276d06092540d3&redirect_uri=${process.env.NEXT_PUBLIC_APP_URL}/auth/register`;
+  const GITHUB_REGISTER_URL = `https://github.com/login/oauth/authorize?client_id=Iv1.95276d06092540d3&redirect_uri=${process.env.NEXT_PUBLIC_APP_URL}/auth/register`;
   console.log(GITHUB_REGISTER_URL);
 
   return (
