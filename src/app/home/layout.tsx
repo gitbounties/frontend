@@ -1,20 +1,27 @@
 import "./style.css";
 import type { ReactNode } from "react";
-import { Tab, TabList, TabPanel, Tabs } from "./tabs";
+import Link from 'next/link';
 
 export default function Layout(props: { tabs: ReactNode }) {
   return (
     <main className="main" style={{backgroundColor: 'black', height: "100vh", maxWidth: "100%"}}>
-      <div className="wrapper" style={{fontFamily: "Hyperion", fontSize: 20, color: "black"}}>
+      <div className="wrapper">
+      <div style={{fontFamily: "Hyperion", fontSize: 20, color: "black", display: "flex"}}>
         GITBOUNTIES
-        <Tabs>
-          <TabList>
-            <Tab href="/home/tabs">Maintainer</Tab>
-            <Tab href="/home/tabs/new">Contributor</Tab>
-          </TabList>
-          <TabPanel>{props.tabs}</TabPanel>
-        </Tabs>
-      </div>
+        </div>
+        <div style={{display: "flex"}}>
+          <Link href="/home/tabs" className="relative inline-block px-4 py-2 font-medium group">
+<span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+<span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
+<span className="relative text-black group-hover:text-white">Maintainer</span>
+</Link>
+<Link href="/home/tabs/new" className="relative inline-block px-4 py-2 font-medium group">
+<span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+<span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
+<span className="relative text-black group-hover:text-white">Contributor</span>
+</Link>
+        </div>
+        </div>
     </main>
   );
 }

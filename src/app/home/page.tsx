@@ -1,3 +1,3 @@
 export default function Page() {
-  return null;
+  return <div style={{color: "white"}}>Hello</div>;
 }
