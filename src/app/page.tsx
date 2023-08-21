@@ -9,11 +9,13 @@ export default function Home() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  const [bounties, setBounties] = useState([]);
+
   const handleLoginSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
       e.preventDefault();
       const { elements } = e.currentTarget;
 
-      fetch(`${API_URL}/github/dummy/login`, {
+      let res = await fetch(`${API_URL}/github/dummy/login`, {
           body: JSON.stringify({
             'username': (elements.namedItem("username") as HTMLInputElement).value,
           }),
@@ -23,14 +25,13 @@ export default function Home() {
             'Content-Type': 'application/json'
           },
           credentials: 'include',
-      }).then(async (result) => {
-        console.log('result', result)
-        //console.log(document.cookie)
-
-        if (result.status == 200) {
-          setIsLoggedIn(true);
-        }
       });
+      console.log('result', res);
+      //console.log(document.cookie)
+
+      if (res.status == 200) {
+        setIsLoggedIn(true);
+      }
   }
 
   const handleBountySubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
@@ -49,7 +50,7 @@ export default function Home() {
 
       console.log("creating bounty", data);
 
-      fetch(`${API_URL}/bounty?` + query, {
+      let res = await fetch(`${API_URL}/bounty?` + query, {
           body: JSON.stringify(data),
           method: 'post',
           headers: {
@@ -57,10 +58,26 @@ export default function Home() {
             'Content-Type': 'application/json'
           },
           credentials: 'include',
-      }).then(async (result) => {
-        console.log('result', result)
+      })
+      console.log('result', res);
 
+  }
+  const handleBountyFetch = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+      e.preventDefault();
+
+
+      const res = await fetch(`${API_URL}/bounty?user=true`, {
+          method: 'get',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          credentials: 'include',
       });
+
+      const new_bounties = await res.json();
+      setBounties(new_bounties);
+      console.log('bounties', bounties);
   }
 
   return (
@@ -71,35 +88,6 @@ export default function Home() {
       <div style={{fontFamily: "Hyperion", fontSize: 100, color: "white", marginTop: "20vh"}}>
         GITBOUNTIES
       </div>
-{/* 
-      <div>
-        Login
-      </div>
-
-    <form onSubmit={handleLoginSubmit}>
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" />
-      <button type="submit">Submit</button>
-    </form>
-
-    {isLoggedIn ? <div>Logged In</div> : <div>Not Logged In</div>}
-
-    <form onSubmit={handleBountySubmit}>
-      <label for="reward">reward</label>
-      <input type="text" id="reward" name="reward" />
-      <label for="owner">owner</label>
-      <input type="text" id="owner" name="owner" />
-      <label for="repo">repo</label>
-      <input type="text" id="repo" name="repo" />
-      <label for="issue">issue</label>
-      <input type="text" id="issue" name="issue" />
-      <button type="submit">Submit</button>
-    </form> */}
-    {/* <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-    style={{fontSize: 30}}>
-    Connect to Github &nbsp;
-    <i className="fa fa-github" style={{fontSize: 30}}></i>
-</button> */}
 <button type="button" className="py-2 px-4 max-w-md flex justify-center items-center bg-gray-600 hover:bg-gray-700 focus:ring-gray-500 focus:ring-offset-gray-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
 style={{marginBottom: "10vh"}}
 onClick={() => {
@@ -110,6 +98,7 @@ onClick={() => {
   </svg>
   Connect to Github
 </button>
+
     </main>
   )
 }
