@@ -2,8 +2,8 @@
 
 import MultiStep from "@/components/Multistep";
 import Image from "next/image";
-import sampleMaintainerDashboard from "../../../public/sampleMaintainerDashboard.png";
-import bountyConvert from "../../../public/bountyConvert.png";
+import sampleMaintainerDashboard from "../../../../public/sampleMaintainerDashboard.png";
+import bountyConvert from "../../../../public/bountyConvert.png";
 
 export default function Page() {
   return (
