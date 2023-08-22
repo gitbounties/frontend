@@ -1,5 +1,6 @@
 "use client";
 
+import MultiStep from "@/components/Multistep";
 import { IWeb3Context, useWeb3Context } from "@/context/Web3ContextProvider";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -172,6 +173,11 @@ export default function Page() {
       <form onSubmit={handleGetBounties}>
         <button type="submit">Get Bounites</button>
       </form>
+
+      <MultiStep>
+        <p>this is my first page</p>
+        <p>this is my second page</p>
+      </MultiStep>
     </>
   );
 }
