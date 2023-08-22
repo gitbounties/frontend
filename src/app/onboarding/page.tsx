@@ -15,6 +15,7 @@ export default function Page() {
         "Convert into a Bounty",
         "Contributor Creates PR",
         "You Merge PR",
+        "Contributor Gets Paid",
       ]}
     >
       {
@@ -27,6 +28,7 @@ export default function Page() {
             alignItems: "center",
             display: "block",
             justifyContent: "center",
+            height: "90%",
             width: "70%",
             fontFamily: "Open Sans, sans-serif",
           }}
@@ -65,6 +67,7 @@ export default function Page() {
             alignItems: "center",
             display: "block",
             justifyContent: "center",
+            height: "90%",
             width: "70%",
             fontFamily: "Open Sans, sans-serif",
           }}
@@ -80,6 +83,7 @@ export default function Page() {
             alignItems: "center",
             display: "block",
             justifyContent: "center",
+            height: "90%",
             width: "70%",
             fontFamily: "Open Sans, sans-serif",
           }}
@@ -113,6 +117,7 @@ export default function Page() {
             alignItems: "center",
             display: "block",
             justifyContent: "center",
+            height: "90%",
             width: "70%",
             fontFamily: "Open Sans, sans-serif",
           }}
@@ -134,7 +139,50 @@ export default function Page() {
           </div>
         </div>
       </>
-      <>{/* Step 5: Contributor creates PR */}</>
+      <>
+        {/* Step 5: Contributor creates PR */}
+        <div
+          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
+          style={{
+            alignItems: "center",
+            display: "block",
+            justifyContent: "center",
+            height: "90%",
+            width: "70%",
+            fontFamily: "Open Sans, sans-serif",
+          }}
+        >
+          <div>Contributor creates PR</div>
+        </div>
+      </>
+      <>
+        {/* Step 6: You Merge PR */}
+        <div
+          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
+          style={{
+            alignItems: "center",
+            display: "block",
+            justifyContent: "center",
+            height: "90%",
+            width: "70%",
+            fontFamily: "Open Sans, sans-serif",
+          }}
+        ></div>
+      </>
+      <>
+        {/* Step 7: Contributor Gets Paid */}
+        <div
+          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
+          style={{
+            alignItems: "center",
+            display: "block",
+            justifyContent: "center",
+            height: "90%",
+            width: "70%",
+            fontFamily: "Open Sans, sans-serif",
+          }}
+        ></div>
+      </>
     </MultiStep>
   );
 }

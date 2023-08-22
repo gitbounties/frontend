@@ -47,7 +47,10 @@ export default function MultiStep({
         Step {currentStep + 1}: {title[currentStep]}
       </p>
       {children[currentStep]}
-      <nav className="inline-flex space-x-2.5" style={{ marginLeft: "44%" }}>
+      <nav
+        className="inline-flex space-x-2.5"
+        style={{ marginLeft: "44%", position: "absolute", bottom: "10%" }}
+      >
         <button
           className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
           onClick={prevStep}
