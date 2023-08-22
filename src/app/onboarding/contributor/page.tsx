@@ -2,22 +2,21 @@
 
 import MultiStep from "@/components/Multistep";
 import Image from "next/image";
-import sampleMaintainerDashboard from "../../../../public/sampleMaintainerDashboard.png";
-import bountyConvert from "../../../../public/bountyConvert.png";
+import sampleContributorDashboard from "../../../../public/sampleContributorDashboard.png";
+import issuePage from "../../../../public/issuePage.png";
 
 export default function Page() {
   return (
     <MultiStep
       title={[
         "Connect to Metamask",
-        "Install Github App",
-        "Browse Issues",
-        "Convert into a Bounty",
-        "Contributor Creates PR",
-        "You Merge PR",
-        "Contributor Gets Paid",
+        "Browse Bounties",
+        "Choose a Bounty to work on",
+        "Create PR",
+        "Wait for the Owner of the Repo to Merge PR",
+        "Claim Reward",
       ]}
-      who="Maintainer"
+      who="Contributor"
     >
       {
         // Step 1: connect to metamask
@@ -34,7 +33,6 @@ export default function Page() {
             fontFamily: "Open Sans, sans-serif",
           }}
         >
-          {/* <button>Connect to Metamask</button> */}
           <button
             type="button"
             className="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mr-2 mb-2"
@@ -55,13 +53,13 @@ export default function Page() {
               textAlign: "center",
             }}
           >
-            As a maintainer, it is strongly recommended to connect to Metamask
-            since it allows you to create a bounty and put rewards in it.
+            As a contributor, you must connect to Metamask so you can claim the
+            bounties.
           </div>
         </div>
       </>
       <>
-        {/* Step 2: Install Github App */}
+        {/* Step 3: Browse Bounties */}
         <div
           className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
           style={{
@@ -73,11 +71,19 @@ export default function Page() {
             fontFamily: "Open Sans, sans-serif",
           }}
         >
-          <div style={{ textAlign: "center" }}>Install Github App</div>
+          <div>You can browse all the active issues to work on.</div>
+          <div className="border-4 border-indigo-600 ...">
+            <Image
+              src={sampleContributorDashboard}
+              alt={""}
+              width={sampleContributorDashboard.width}
+              height={sampleContributorDashboard.height}
+            />
+          </div>
         </div>
       </>
       <>
-        {/* Step 3: Browse Issues */}
+        {/* Step 4: Create PR */}
         <div
           className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
           style={{
@@ -90,28 +96,33 @@ export default function Page() {
           }}
         >
           <div>
-            You can browse your own github issues and turn them into bounties.
+            Once you have choosed a bounty to work on, click on it and it will
+            take you to the actual issue page on Github.
+            <div className="border-4 border-indigo-600 ...">
+              <Image
+                src={issuePage}
+                alt={""}
+                width={issuePage.width * 0.4}
+                height={issuePage.height * 0.4}
+              />
+            </div>
             <br />
-            Below is an example of a dashboard for a maintainer. As you can see,
-            the first issue is Active, so you can convert it into a bounty by
-            clicking the "Convert into a bounty" button on the right. (More
-            details on this will be explained in the next step)
+            After you solved the issue, create a PR and make sure to{" "}
+            <b>REFERENCE THE ORIGINAL ISSUE</b>
             <br />
-            The second issue is closed, which means you cannot convert it into a
-            bounty.
-          </div>
-          <div className="border-4 border-indigo-600 ...">
-            <Image
-              src={sampleMaintainerDashboard}
-              alt={""}
-              width={sampleMaintainerDashboard.width}
-              height={sampleMaintainerDashboard.height}
-            />
+            Click{" "}
+            <a
+              href="https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue"
+              className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
+            >
+              here
+            </a>{" "}
+            for more details.
           </div>
         </div>
       </>
       <>
-        {/* Step 4: Convert into a bounty*/}
+        {/* Step 5: Wait for the Owner of the Repo to merge PR */}
         <div
           className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
           style={{
@@ -123,55 +134,11 @@ export default function Page() {
             fontFamily: "Open Sans, sans-serif",
           }}
         >
-          <div>
-            Once you clicked on "Convert into a bounty", there will be a popup
-            showing on the screen asking you how much reward you want to put in
-            (Note that there will be a gas fee included as well). Once you
-            submitted this popup, the money will be deducted from your Metamask
-            wallet and now you succesfully converted an issue into a bounty!
-          </div>
-          <div className="border-4 border-indigo-600 ...">
-            <Image
-              src={bountyConvert}
-              alt={""}
-              width={bountyConvert.width}
-              height={bountyConvert.height}
-            />
-          </div>
+          <div>Wait for the Owner of the Repo to merge PR</div>
         </div>
       </>
       <>
-        {/* Step 5: Contributor creates PR */}
-        <div
-          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
-          style={{
-            alignItems: "center",
-            display: "block",
-            justifyContent: "center",
-            height: "90%",
-            width: "70%",
-            fontFamily: "Open Sans, sans-serif",
-          }}
-        >
-          <div>Contributor creates PR</div>
-        </div>
-      </>
-      <>
-        {/* Step 6: You Merge PR */}
-        <div
-          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
-          style={{
-            alignItems: "center",
-            display: "block",
-            justifyContent: "center",
-            height: "90%",
-            width: "70%",
-            fontFamily: "Open Sans, sans-serif",
-          }}
-        ></div>
-      </>
-      <>
-        {/* Step 7: Contributor Gets Paid */}
+        {/* Step 6: Claim Reward */}
         <div
           className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
           style={{

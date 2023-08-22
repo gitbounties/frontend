@@ -3,9 +3,11 @@ import React, { useEffect, useState } from "react";
 export default function MultiStep({
   children,
   title,
+  who,
 }: {
   children: React.ReactNode;
   title: string[];
+  who: string;
 }) {
   console.log("children", children);
 
@@ -24,7 +26,7 @@ export default function MultiStep({
       <a
         type="button"
         className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-        href="/dashboard/maintainer"
+        href={`/dashboard/${who.toLowerCase()}`}
       >
         <span className="sr-only">Close menu</span>
         <svg
@@ -49,7 +51,7 @@ export default function MultiStep({
       {children[currentStep]}
       <nav
         className="inline-flex space-x-2.5"
-        style={{ marginLeft: "44%", position: "absolute", bottom: "10%" }}
+        style={{ marginLeft: "44%", position: "absolute", bottom: "5%" }}
       >
         {currentStep != 0 && (
           <button
@@ -124,8 +126,8 @@ export default function MultiStep({
             onClick={nextStep}
           >
             <div className="flex flex-row align-middle">
-              <a className="mr-2" href="/dashboard/maintainer">
-                Go to Maintainer Page
+              <a className="mr-2" href={`/dashboard/${who.toLowerCase()}`}>
+                Go to {who} Page
               </a>
               <svg
                 className="w-5 ml-2"
