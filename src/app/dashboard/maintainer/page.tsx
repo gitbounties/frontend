@@ -11,8 +11,7 @@ export default function Page() {
     repository: string,
     issue: string,
     status: boolean,
-    closedBy: string,
-    money: number
+    closedBy: string
   ) => {
     return (
       <tr>
@@ -51,10 +50,6 @@ export default function Page() {
             </div>
           </td>
         )}
-
-        <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-          <a className="text-sm leading-5 text-gray-900">{money}</a>
-        </td>
         {status && (
           <td className="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
             <Popup
@@ -125,9 +120,6 @@ export default function Page() {
                 <th className="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                   Status
                 </th>
-                <th className="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                  Money
-                </th>
                 <th className="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
               </tr>
             </thead>
@@ -139,18 +131,16 @@ export default function Page() {
                 "gitbounties_frontend",
                 "dashboard not rendering",
                 true,
-                "",
-                5
+                ""
               )}
               {issueItem(
-                "Daniel Liu",
-                "MrPicklePinosaur",
-                "https://avatars.githubusercontent.com/u/39071861?v=4",
+                "Helen Zhang",
+                "helenzhangyc",
+                "https://avatars.githubusercontent.com/u/45017130?s=400&u=fca9f286318fbbe286f7a8c29cc0c040402c6df7&v=4",
                 "shrs",
                 "[Bug]: Nesting shrs breaks exit command",
                 false,
-                "Melissa1412",
-                10
+                "Melissa1412"
               )}
             </tbody>
           </table>
