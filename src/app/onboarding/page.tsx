@@ -1,9 +1,10 @@
 "use client";
 
-// import { useState } from "react";
+import { useState } from "react";
+import { redirect } from "next/navigation";
 
 export default function Page() {
-  let currentStep = 0;
+  const [currentStep, setCurrentStep] = useState(0);
 
   const steps = [
     {
@@ -22,9 +23,11 @@ export default function Page() {
   ];
 
   // const [slide, setSlide] = useState();
+
   const renderText = (stepIndex: number) => {
     if (currentStep >= steps.length) {
-      alert("Onboarding completed!");
+      // alert("Onboarding completed!");
+      redirect("/dashboard/maintainer");
     }
     return (
       <>
@@ -44,7 +47,7 @@ export default function Page() {
           <button
             id="nextBtn"
             onClick={(e) => {
-              currentStep++;
+              setCurrentStep(currentStep + 1);
             }}
           >
             Next
