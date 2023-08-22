@@ -2,6 +2,7 @@
 
 import MultiStep from "@/components/Multistep";
 import { IWeb3Context, useWeb3Context } from "@/context/Web3ContextProvider";
+import useGitbountiesContract from "@/hooks/useGitbountiesContract";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -16,6 +17,14 @@ export default function Page() {
     disconnect,
     state: { isAuthenticated, address, currentChain, provider },
   } = useWeb3Context() as IWeb3Context;
+
+  const contract = useGitbountiesContract();
+
+  // contract?.on("Transfer", (from, to, value, event) => {
+  //   console.log("Tansfer event", from, to, value, event);
+  // });
+
+  console.log("contract", contract);
 
   const handleLoginSubmit = async (
     e: React.FormEvent<HTMLFormElement>
@@ -116,6 +125,18 @@ export default function Page() {
     console.log("body", body);
   };
 
+  const handleMintBounty = async (): Promise<void> => {
+    const tx = await contract.mint();
+    // console.log('transaction', tx);
+    const receipt = await tx.wait();
+    // console.log('transaction result', receipt);
+    const filter = contract.filters.Transfer(null, null, null);
+    const transferEvents = await contract.queryFilter(filter);
+
+    const tokenId = transferEvents[transferEvents.length - 1].topics[4];
+    console.log("minted new token with tokenId", tokenId);
+  };
+
   return (
     <>
       <h1>Login</h1>
@@ -174,10 +195,9 @@ export default function Page() {
         <button type="submit">Get Bounites</button>
       </form>
 
-      <MultiStep>
-        <p>this is my first page</p>
-        <p>this is my second page</p>
-      </MultiStep>
+      <hr />
+
+      <button onClick={handleMintBounty}>Mint Bounites</button>
     </>
   );
 }
