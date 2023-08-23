@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import NextNProgress from "nextjs-progressbar";
 
 export default function MultiStep({
   children,
@@ -11,6 +12,10 @@ export default function MultiStep({
 }) {
   console.log("children", children);
 
+  const NextNProgressClient = () => {
+    return <NextNProgress />;
+  };
+
   const [steps, setSteps] = useState(children.length - 1 || 0);
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -19,6 +24,21 @@ export default function MultiStep({
   };
   const prevStep = () => {
     setCurrentStep(Math.max(currentStep - 1, 0));
+  };
+
+  const ProgressBar = ({
+    progressPercentage,
+  }: {
+    progressPercentage: number;
+  }) => {
+    return (
+      <div className="h-1 w-full bg-gray-300">
+        <div
+          style={{ width: `${progressPercentage}%` }}
+          className={`h-full ${"bg-indigo-700"}`}
+        ></div>
+      </div>
+    );
   };
 
   return (
@@ -48,10 +68,13 @@ export default function MultiStep({
       <p className="text-lg font-bold text-gray-700 leading-tight text-center mt-12 mb-5">
         Step {currentStep + 1}: {title[currentStep]}
       </p>
+      <ProgressBar
+        progressPercentage={(100 / children.length) * (currentStep + 1)}
+      ></ProgressBar>
       {children[currentStep]}
       <nav
         className="inline-flex space-x-2.5"
-        style={{ marginLeft: "44%", position: "absolute", bottom: "5%" }}
+        style={{ marginLeft: "42%", position: "absolute", bottom: "5%" }}
       >
         {currentStep != 0 && (
           <button

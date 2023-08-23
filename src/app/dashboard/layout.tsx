@@ -1,10 +1,16 @@
 "use client";
+
 import "./style.css";
 import Link from "next/link";
 import Image from "next/image";
 import maintainerIcon from "../../../public/maintainer.svg";
 import contributorIcon from "../../../public/contributor.svg";
 import { IWeb3Context, useWeb3Context } from "@/context/Web3ContextProvider";
+import React from "react";
+import Popup from "reactjs-popup";
+import MultiStep from "@/components/Multistep";
+import sampleMaintainerDashboard from "../../../public/sampleMaintainerDashboard.png";
+import bountyConvert from "../../../public/bountyConvert.png";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const {
@@ -47,6 +53,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <Link
               href="/dashboard/maintainer"
               className="relative inline-block px-4 py-2 font-medium group"
+
+        <div style={{ display: "flex" }}>
+          <Link
+            href="/dashboard/maintainer"
+            className="relative inline-block px-4 py-2 font-medium group"
+          >
+            <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+            <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
+
+            <button
+              className="relative text-black group-hover:text-white"
+              style={{ display: "flex" }}
             >
               <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
               <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
