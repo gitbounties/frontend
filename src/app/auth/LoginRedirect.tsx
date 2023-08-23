@@ -3,8 +3,9 @@
 import React, { useEffect } from "react";
 import { redirect, useRouter, useSearchParams } from "next/navigation";
 import { RedirectType } from "next/dist/client/components/redirect";
+import { IWeb3Context, useWeb3Context } from "@/context/Web3ContextProvider";
 
-export default function AuthRedirect({
+export default function LoginRedirect({
   children,
   apiPath,
 }: {
@@ -15,8 +16,14 @@ export default function AuthRedirect({
   const searchParams = useSearchParams();
   const code = searchParams.get("code") ?? "";
 
+  const {
+    connectWallet,
+    disconnect,
+    state: { isAuthenticated, address, currentChain, provider },
+  } = useWeb3Context() as IWeb3Context;
+
   useEffect(() => {
-    const request = async () => {
+    const loginUser = async () => {
       // TODO error handling for when searchParams code is null/malformed
       const query = new URLSearchParams({
         code: code,
@@ -30,17 +37,17 @@ export default function AuthRedirect({
             Accept: "application/json",
             "Content-Type": "application/json",
           },
+          credentials: "include",
         }
       );
 
-      console.log(res);
+      console.log("login res", res);
       if (res.status == 200) {
         push("/dashboard/contributor");
       }
     };
+    loginUser().catch(console.error);
+  }, []);
 
-    request().catch(console.error);
-  }, [code]);
-
-  return <>{children}</>;
+  return <> {children} </>;
 }

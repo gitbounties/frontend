@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev-https": "node server.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier src --write",
-    "devsetup": "husky install"
+    "devsetup": "husky install",
+    "certs": "mkdir -p certs; mkcert -key-file certs/key.pem -cert-file certs/cert.pem gitbounties.io"
   },
   "dependencies": {
     "@ariakit/react": "^0.2.16",
@@ -43,6 +45,7 @@
   },
   "devDependencies": {
     "@types/react-native-onboarding-swiper": "^1.1.4",
+    "https": "^1.0.0",
     "husky": "^8.0.3",
     "prettier": "3.0.2"
   }
