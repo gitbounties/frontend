@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import maintainerIcon from "../../../public/maintainer.svg";
 import contributorIcon from "../../../public/contributor.svg";
+import connectionGreen from "../../../public/connectionGreen.png";
+import connectionRed from "../../../public/connectionRed.png";
 import { IWeb3Context, useWeb3Context } from "@/context/Web3ContextProvider";
 import React from "react";
 import Popup from "reactjs-popup";
@@ -21,79 +23,106 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <main
-      className="main"
+      className="main "
       style={{
         backgroundColor: "white",
         height: "100vh",
         maxWidth: "100%",
+        paddingTop: "20px",
       }}
     >
-      <div className="wrapper">
+      <div
+        className="wrapper bg-gradient-to-r from-blue-500"
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "0 20px",
+        }}
+      >
         <div
           style={{
             fontFamily: "Hyperion",
-            fontSize: 20,
+            fontSize: 29,
             color: "black",
             display: "flex",
+            alignItems: "center",
           }}
         >
           GITBOUNTIES
         </div>
         <div
           style={{
-            fontSize: 12,
+            fontSize: 18,
             color: "black",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
           }}
         >
-          <div>Address: {address}</div>
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex", alignItems: "center" }}>
             <Link
               href="/dashboard/maintainer"
-              className="relative inline-block px-4 py-2 font-medium group"
+              className="relative inline-block px-4 py-2 font-medium group "
             >
-              <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
-              <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
               <button
-                className="relative text-black group-hover:text-white"
-                style={{ display: "flex" }}
+                className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+                style={{ display: "flex", alignItems: "center" }}
               >
                 <Image
                   src={maintainerIcon}
-                  alt={""}
+                  alt=""
                   height={15}
                   width={20}
                   objectFit="contain"
                 />
-                Maintainer
+                <span style={{ marginLeft: "5px" }}>Maintainer</span>
               </button>
             </Link>
             <Link
               href="/dashboard/contributor"
-              className="relative inline-block px-4 py-2 font-medium group"
+              className="relative inline-block px-4 py-2 font-medium group "
             >
-              <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
-              <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
               <span
-                className="relative text-black group-hover:text-white"
-                style={{ display: "flex" }}
+                className="text-white bg-gradient-to-br shadow-xl from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+                style={{ display: "flex", alignItems: "center" }}
               >
                 <Image
                   src={contributorIcon}
-                  alt={""}
+                  alt=""
                   height={15}
                   width={20}
                   objectFit="contain"
                 />
-                Contributor
+                <span style={{ marginLeft: "5px" }}>Contributor</span>
               </span>
             </Link>
           </div>
+          <div>
+            <div className="user-status-dot-container">
+              <div
+                className={`user-status-dot ${
+                  isAuthenticated ? "signed-in" : "not-signed-in"
+                }`}
+              ></div>
+            </div>
+            <span
+              style={{
+                fontSize: "12px",
+                marginLeft: "20px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                marginTop: "-12px",
+              }}
+            >
+              {isAuthenticated ? "Connected" : "Not Connected"}
+            </span>
+          </div>
         </div>
-        <div>{children}</div>
       </div>
+      <div>{children}</div>
     </main>
   );
 }

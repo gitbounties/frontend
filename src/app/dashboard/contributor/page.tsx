@@ -83,7 +83,7 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      <div className="flex mt-10 border-2 border-grey-300 w-full max-w-md  rounded-md">
+      <div className="flex mt-10 border-2 border-grey-300 w-full max-w-md  rounded-md  justify-end">
         <Popup
           trigger={
             <button
@@ -288,48 +288,50 @@ export default function App() {
           </>
         </Popup>
         <input
-          className="p-3 pl-10 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500  dark:border-gray-70 dark:text-gray-400"
+          type="text"
+          name="hs-table-search"
+          id="hs-table-search"
+          className="p-3 pl-10 block w-full border-gray-200  text-sm focus:border-fuchsia-500 focus:ring-fuchsia-500  dark:border-gray-70 dark:text-gray-400 paddingBottom-20"
           style={{ width: "100%" }}
           placeholder="Search for the project you want to work on"
           onChange={(e) => setQuery(e.target.value)}
         ></input>
-        <button className="flex items-center justify-center px-4 bg-gray-300">
+        <button className="flex items-center justify-center px-4 bg-gray-300 border-gray-200 ml-0.5">
           <svg
-            className="w-6 h-6 text-gray-500"
+            className="h-4.5 w-4.5 text-gray-400 "
+            width="16"
+            height="16"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            />
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
           </svg>
         </button>
       </div>
+      <br></br>
+
       <div>
         <div className="flex flex-col">
-          <div className="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+          <div className="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 ">
             <div className="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
               <table className="min-w-full">
                 <thead>
                   <tr>
-                    <th className="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                       Github Username
                     </th>
-                    <th className="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                       Repository
                     </th>
-                    <th className="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                       Issue
                     </th>
-                    <th className="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                       Date Created
                     </th>
-                    <th className="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 border-b border-gray-200 bg-gray-50 text-center text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                       Reward
                     </th>
                   </tr>

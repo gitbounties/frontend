@@ -215,3 +215,30 @@
   gap: 0.5rem;
   padding: 0.5rem;
 }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f9f5f5;
+}
+
+.user-status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+/* Green dot for signed-in user */
+.user-status-dot.signed-in {
+  background-color: green;
+}
+
+/* Red dot for not signed-in user */
+.user-status-dot.not-signed-in {
+  background-color: red;
+}
