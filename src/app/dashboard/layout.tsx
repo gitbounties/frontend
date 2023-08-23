@@ -40,7 +40,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         }}
       >
         <div className="header-content">
-          <h1 className="gradient__text">GITBOUNTIES</h1>
+          <h3 className="gradient__text">GITBOUNTIES</h3>
         </div>
         <div
           style={{

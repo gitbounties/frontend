@@ -89,29 +89,22 @@ export default function Home() {
   const GITHUB_LOGIN_URL = `https://github.com/login/oauth/authorize?client_id=Iv1.95276d06092540d3&redirect_uri=${process.env.NEXT_PUBLIC_APP_URL}/auth/login`;
 
   return (
-    <main
-      className="flex min-h-screen flex-col items-center justify-between p-24"
-      style={{ backgroundColor: "black" }}
-    >
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-      ></link>
-
+    <main className="flex min-h-screen flex-col items-center justify-between p-24 gradient__bg">
       <a
         style={{
-          fontFamily: "Hyperion",
-          fontSize: 100,
-          color: "white",
+          fontSize: 200,
+
           marginTop: "20vh",
         }}
       >
-        GITBOUNTIES
+        <div className="header-content">
+          <h1 className="gradient__text">GITBOUNTIES</h1>
+        </div>
       </a>
       <button
         type="button"
-        className="py-2 px-4 max-w-md flex justify-center items-center bg-gray-600 hover:bg-gray-700 focus:ring-gray-500 focus:ring-offset-gray-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
-        style={{ marginTop: "10vh" }}
+        className="text-white bg-gradient-to-br  shadow-xl  from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+        style={{ display: "flex", alignItems: "center" }}
         onClick={() => {
           window.location.href = GITHUB_REGISTER_URL;
         }}
@@ -130,8 +123,8 @@ export default function Home() {
       </button>
       <button
         type="button"
-        className="py-2 px-4 max-w-md flex justify-center items-center bg-gray-600 hover:bg-gray-700 focus:ring-gray-500 focus:ring-offset-gray-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
-        style={{ marginBottom: "10vh" }}
+        className="text-white bg-gradient-to-br  shadow-xl  from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+        style={{ marginBottom: "20vh", display: "flex", alignItems: "center" }}
         onClick={() => {
           window.location.href = GITHUB_LOGIN_URL;
         }}
