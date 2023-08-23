@@ -5,8 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import maintainerIcon from "../../../public/maintainer.svg";
 import contributorIcon from "../../../public/contributor.svg";
-import connectionGreen from "../../../public/connectionGreen.png";
-import connectionRed from "../../../public/connectionRed.png";
 import { IWeb3Context, useWeb3Context } from "@/context/Web3ContextProvider";
 import React from "react";
 import Popup from "reactjs-popup";
@@ -23,16 +21,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <main
-      className="main "
+      className="main bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg"
       style={{
-        backgroundColor: "white",
+        backgroundColor: "white ",
         height: "100vh",
         maxWidth: "100%",
         paddingTop: "20px",
       }}
     >
       <div
-        className="wrapper bg-gradient-to-r from-blue-500"
+        className="wrapper bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
         style={{
           display: "flex",
           flexDirection: "row",
