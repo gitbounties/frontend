@@ -21,7 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <main
-      className="main bg-gradient-to-r gradient__bg rounded-lg"
+      className="main bg-gradient-to-r gradient__bg rounded-lg opacity-100"
       style={{
         backgroundColor: "white ",
         height: "100vh",
@@ -37,7 +37,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       }}
     >
       <div
-        className="wrapper bg-gradient-to-r gradient__bg"
+        className="wrapper bg-gradient-to-r gradient__bg opacity-100"
         style={{
           display: "flex",
           flexDirection: "row",
@@ -118,7 +118,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                marginTop: "-12px",
+                marginTop: "-14px",
                 color: "white",
               }}
             >
