@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useEffect } from "react";
-import AuthRedirect from "../AuthRedirect";
+import RegisterRedirect from "../RegisterRedirect";
 
 export default function Page() {
   return (
     <>
-      <AuthRedirect apiPath="/github/callback/install">
+      <RegisterRedirect apiPath="/github/callback/install">
         <h1>Installation Pending</h1>
-      </AuthRedirect>
+      </RegisterRedirect>
     </>
   );
 }
