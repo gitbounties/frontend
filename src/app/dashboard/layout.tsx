@@ -88,7 +88,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               href="/dashboard/contributor"
               className="relative inline-block px-4 py-2 font-medium group "
             >
-              <span
+              <button
                 className="text-white bg-gradient-to-br shadow-xl from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
                 style={{ display: "flex", alignItems: "center" }}
               >
@@ -100,7 +100,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   objectFit="contain"
                 />
                 <span style={{ marginLeft: "5px" }}>Contributor</span>
-              </span>
+              </button>
             </Link>
           </div>
           <div>
