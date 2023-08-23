@@ -149,7 +149,7 @@ export default function App() {
                         display: "block",
                         alignItems: "center",
                         justifyContent: "center",
-                        marginLeft: "42%",
+                        marginLeft: "40%",
                       }}
                     >
                       Connect to Metamask
