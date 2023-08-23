@@ -52,7 +52,6 @@ export default function Page() {
                 display: "block",
                 alignItems: "center",
                 justifyContent: "center",
-                marginLeft: "42%",
               }}
             >
               Connect to Metamask
