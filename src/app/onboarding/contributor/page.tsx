@@ -4,8 +4,16 @@ import MultiStep from "@/components/Multistep";
 import Image from "next/image";
 import sampleContributorDashboard from "../../../../public/sampleContributorDashboard.png";
 import issuePage from "../../../../public/issuePage.png";
+import okay from "../../../../public/okayOnce.gif";
+import { IWeb3Context, useWeb3Context } from "@/context/Web3ContextProvider";
 
 export default function Page() {
+  const {
+    connectWallet,
+    disconnect,
+    state: { isAuthenticated, address, currentChain, provider },
+  } = useWeb3Context() as IWeb3Context;
+
   return (
     <MultiStep
       title={[
@@ -26,25 +34,53 @@ export default function Page() {
           className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
           style={{
             alignItems: "center",
-            display: "block",
+            flexDirection: "column",
+            display: "flex",
             justifyContent: "center",
             height: "90%",
             width: "70%",
             fontFamily: "Open Sans, sans-serif",
           }}
         >
-          <button
-            type="button"
-            className="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mr-2 mb-2"
-            style={{
-              display: "block",
-              alignItems: "center",
-              justifyContent: "center",
-              marginLeft: "42%",
-            }}
-          >
-            Connect to Metamask
-          </button>
+          {/* <button>Connect to Metamask</button> */}
+          {!isAuthenticated ? (
+            <button
+              type="button"
+              onClick={connectWallet}
+              className="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mr-2 mb-2"
+              style={{
+                display: "block",
+                alignItems: "center",
+                justifyContent: "center",
+                marginLeft: "42%",
+              }}
+            >
+              Connect to Metamask
+            </button>
+          ) : (
+            <div
+              style={{
+                alignItems: "center",
+                flexDirection: "column",
+                display: "flex",
+                justifyContent: "center",
+                height: "90%",
+                width: "70%",
+                fontFamily: "Open Sans, sans-serif",
+              }}
+            >
+              <Image
+                src={okay}
+                alt="Connected"
+                style={{ maxWidth: "100%", height: "auto" }}
+              />
+              <p> Connected</p>
+              <br></br>
+              <br></br>
+              <p>Address: {address}</p>
+            </div>
+          )}
+
           <div
             style={{
               display: "block",
