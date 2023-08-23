@@ -37,13 +37,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       }}
     >
       <div
-        className="wrapper bg-gradient-to-r gradient__bg opacity-100"
+        className="wrapper bg-gradient-to-r opacity-100"
         style={{
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "center",
           padding: "0 20px",
+          backgroundColor: "#040C17",
         }}
       >
         <div className="header-content">
