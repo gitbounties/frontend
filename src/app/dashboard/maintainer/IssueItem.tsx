@@ -4,7 +4,6 @@ import useGitbountiesContract from "@/hooks/useGitbountiesContract";
 import { Contract } from "ethers";
 import React, { useEffect, useState } from "react";
 import Popup from "reactjs-popup";
-import createBountyFn from "./page.tsx";
 
 import "reactjs-popup/dist/index.css";
 
@@ -72,6 +71,7 @@ export default function IssueItem({
             position={"right center"}
             modal
             nested
+            contentStyle={{ width: "20%", height: "50%" }}
           >
             <a
               type="button"
@@ -95,31 +95,38 @@ export default function IssueItem({
               </svg>
             </a>
             <form
-              className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+              className="bg-white px-8 pt-6 pb-8 mb-4"
               onSubmit={onSubmit}
+              // style={{ height: "70%", width: "50%" }}
             >
-              <div style={{ display: "table", width: "100%" }}>
+              <div style={{ width: "100%", textAlign: "center" }}>
                 <label
                   className="block text-gray-700 text-sm font-bold mb-2"
                   style={{
                     display: "table-cell",
                     whiteSpace: "nowrap",
                     width: "1px",
+                    textAlign: "center",
+                    alignContent: "center",
                   }}
                 >
                   How much money do you want to put in?
                 </label>
-                <span style={{ display: "table-cell", padding: "0 4px 0 6px" }}>
-                  <input
-                    type="number"
-                    id="bountyAmount"
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    required
-                    style={{ width: "30%", marginLeft: "2%" }}
-                  ></input>
-                </span>
+                <br />
+                {/* <span style={{ display: "table-cell", padding: "0 4px 0 6px" }}> */}
+                <input
+                  type="number"
+                  id="bountyAmount"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  required
+                  style={{ width: "30%", marginLeft: "2%" }}
+                ></input>
+                {/* </span> */}
               </div>
-              <div className="block text-gray-700 text-sm font-bold mb-2">
+              <div
+                className="block text-gray-700 text-sm font-bold mb-2"
+                style={{ marginTop: "10%" }}
+              >
                 Gas Fee:{" "}
               </div>
               {/* <button
@@ -132,7 +139,7 @@ export default function IssueItem({
               <button
                 type="button"
                 className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-                style={{ marginLeft: "45%" }}
+                style={{ marginLeft: "35%", marginTop: "40%" }}
               >
                 Submit
               </button>
