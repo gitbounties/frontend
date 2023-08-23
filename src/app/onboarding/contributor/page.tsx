@@ -16,6 +16,7 @@ export default function Page() {
 
   return (
     <MultiStep
+      showTitles={false}
       title={[
         "Connect to Metamask",
         "Browse Bounties",
@@ -29,9 +30,11 @@ export default function Page() {
       {
         // Step 1: connect to metamask
       }
+
       <>
+        <br></br>
         <div
-          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
+          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-silver-200 mb-8 sm:p-8  dark:border-silver-700"
           style={{
             alignItems: "center",
             flexDirection: "column",
@@ -39,6 +42,7 @@ export default function Page() {
             justifyContent: "center",
             height: "90%",
             width: "70%",
+
             fontFamily: "Open Sans, sans-serif",
           }}
         >
@@ -46,8 +50,9 @@ export default function Page() {
           {!isAuthenticated ? (
             <button
               type="button"
+              data-modal-target="crypto-modal"
               onClick={connectWallet}
-              className="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mr-2 mb-2"
+              className="text-white bg-gradient-to-br shadow-xl  from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
               style={{
                 display: "block",
                 alignItems: "center",
@@ -96,7 +101,7 @@ export default function Page() {
       <>
         {/* Step 3: Browse Bounties */}
         <div
-          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
+          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-silver-200 mb-8 sm:p-8  dark:border-silver-700"
           style={{
             alignItems: "center",
             display: "block",
@@ -120,7 +125,7 @@ export default function Page() {
       <>
         {/* Step 4: Create PR */}
         <div
-          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
+          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-silver-200 mb-8 sm:p-8  dark:border-silver-700"
           style={{
             alignItems: "center",
             display: "block",
@@ -159,7 +164,7 @@ export default function Page() {
       <>
         {/* Step 5: Wait for the Owner of the Repo to merge PR */}
         <div
-          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
+          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-silver-200 mb-8 sm:p-8  dark:border-silver-700"
           style={{
             alignItems: "center",
             display: "block",
@@ -175,7 +180,7 @@ export default function Page() {
       <>
         {/* Step 6: Claim Reward */}
         <div
-          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
+          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-silver-200 mb-8 sm:p-8  dark:border-silver-700"
           style={{
             alignItems: "center",
             display: "block",

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import NextNProgress from "nextjs-progressbar";
+import "src/app/globals.css";
 
 export default function MultiStep({
   children,
@@ -65,9 +66,14 @@ export default function MultiStep({
           />
         </svg>
       </a>
-      <p className="text-lg font-bold text-gray-700 leading-tight text-center mt-12 mb-5">
+      <h1
+        className="text-lg font-bold  leading-tight text-center mt-12 mb-5 gradient__text"
+        style={{
+          fontSize: "30px",
+        }}
+      >
         Step {currentStep + 1}: {title[currentStep]}
-      </p>
+      </h1>
       <ProgressBar
         progressPercentage={(100 / children.length) * (currentStep + 1)}
       ></ProgressBar>
