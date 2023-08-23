@@ -49,8 +49,12 @@ export default function Page() {
     const tokenId = await mintNFT(contract);
     console.log("minted token with id", tokenId);
 
+    // TODO DANGER: tokenId is controlled by the API caller
+    // double check on backend that wallet address associated with this user is actually the owner of tokenId
+
     const data = {
       reward: reward,
+      token_id: tokenId,
     };
 
     const query = new URLSearchParams({
