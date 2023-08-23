@@ -73,10 +73,34 @@ export default function IssueItem({
             modal
             nested
           >
-            <form onSubmit={onSubmit}>
+            <a
+              type="button"
+              className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+              href={`/dashboard/maintainer`}
+            >
+              <svg
+                className="h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </a>
+            <form
+              className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+              onSubmit={onSubmit}
+            >
               <div style={{ display: "table", width: "100%" }}>
                 <label
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-gray-700 text-sm font-bold mb-2"
                   style={{
                     display: "table-cell",
                     whiteSpace: "nowrap",
@@ -89,18 +113,18 @@ export default function IssueItem({
                   <input
                     type="number"
                     id="bountyAmount"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     required
                     style={{ width: "30%", marginLeft: "2%" }}
                   ></input>
                 </span>
               </div>
-              <div className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <div className="block text-gray-700 text-sm font-bold mb-2">
                 Gas Fee:{" "}
               </div>
               <button
                 type="submit"
-                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-gray-900 rounded-lg hover:bg-gray-800 focus:shadow-outline focus:outline-none"
+                className="bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 style={{ marginLeft: "45%" }}
               >
                 Submit
