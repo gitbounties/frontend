@@ -19,7 +19,8 @@ export default function App() {
   ) => {
     return (
       <tr
-        style={{ cursor: "pointer" }}
+        className="hover:bg-neutral-100 rounded-2xl mr-80 border-spacing-1 border rounded-lg overflow-hidden dark:border-gray-70 border-collapse"
+        style={{ cursor: "pointer", textAlign: "center" }}
         onClick={(e) => {
           window.location.href =
             "https://github.com/MrPicklePinosaur/shrs/issues/240";
@@ -37,18 +38,18 @@ export default function App() {
             </div>
           </div>
         </td>
-        <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+        <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200  ">
           <div className="text-sm leading-5 text-gray-900">
             {owner}/{repository}
           </div>
         </td>
-        <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+        <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200 ">
           <div className="text-sm leading-5 text-gray-900">
             [{label}]{title}
           </div>
           <div className="text-sm leading-5 text-gray-500">{description}</div>
         </td>
-        <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+        <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200 ">
           <div className="text-sm leading-5 text-gray-900">{dateCreated}</div>
         </td>
         <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
@@ -69,9 +70,9 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      <div className="flex mt-10 border-2 border-grey-300 w-full max-w-md">
+      <div className="flex mt-10 border-2 border-grey-300 w-full max-w-md  rounded-md">
         <input
-          className="w-full px-4 py-2 text-sm focus:outline-none"
+          className="p-3 pl-10 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500  dark:border-gray-70 dark:text-gray-400"
           style={{ width: "100%" }}
           placeholder="Search for the project you want to work on"
           onChange={(e) => setQuery(e.target.value)}
@@ -115,7 +116,6 @@ export default function App() {
                     <th className="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                       Reward
                     </th>
-                    <th className="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
                   </tr>
                 </thead>
                 {Data.filter((post) => {
@@ -148,6 +148,7 @@ export default function App() {
                   //     paddingLeft: "10px",
                   //   }}
                   // >
+
                   <tbody className="bg-white">
                     {issueItem(
                       post.owner,
