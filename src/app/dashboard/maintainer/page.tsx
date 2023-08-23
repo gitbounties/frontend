@@ -6,6 +6,10 @@ import React, { useEffect, useState } from "react";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import IssueItem from "./IssueItem";
+import Image from "next/image";
+import MultiStep from "@/components/Multistep";
+import sampleMaintainerDashboard from "../../../../public/sampleMaintainerDashboard.png";
+import bountyConvert from "../../../../public/bountyConvert.png";
 
 interface Issue {
   issue_id: number;
