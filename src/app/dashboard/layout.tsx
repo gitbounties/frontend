@@ -25,8 +25,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       style={{
         backgroundColor: "white ",
         height: "100vh",
-        maxWidth: "100%",
+        maxWidth: "200%",
+        // width: "100%",
         paddingTop: "20px",
+        position: "fixed",
+        left: 0,
+        top: 0,
+        bottom: 0,
+        right: 0,
+        overflow: "auto",
       }}
     >
       <div
@@ -40,7 +47,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         }}
       >
         <div className="header-content">
-          <h1 className="gradient__text">GITBOUNTIES</h1>
+          <h1
+            className="gradient__text"
+            style={{
+              fontFamily: "Segoe UI, Noto Sans, Helvetica, Arial, san-serif",
+            }}
+          >
+            GITBOUNTIES
+          </h1>
         </div>
         <div
           style={{
