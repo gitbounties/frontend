@@ -374,7 +374,7 @@ export default function App() {
                   //   }}
                   // >
 
-                  <tbody className="bg-white">
+                  <tbody className="bg-white" style={{ width: "100%" }}>
                     {issueItem(
                       post.owner,
                       post.repository,
