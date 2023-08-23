@@ -21,7 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <main
-      className="main bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg"
+      className="main bg-gradient-to-r gradient__bg rounded-lg"
       style={{
         backgroundColor: "white ",
         height: "100vh",
@@ -30,7 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       }}
     >
       <div
-        className="wrapper bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+        className="wrapper bg-gradient-to-r gradient__bg"
         style={{
           display: "flex",
           flexDirection: "row",
@@ -39,16 +39,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           padding: "0 20px",
         }}
       >
-        <div
-          style={{
-            fontFamily: "Hyperion",
-            fontSize: 29,
-            color: "black",
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          GITBOUNTIES
+        <div className="header-content">
+          <h1 className="gradient__text">GITBOUNTIES</h1>
         </div>
         <div
           style={{
@@ -65,7 +57,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               className="relative inline-block px-4 py-2 font-medium group "
             >
               <button
-                className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+                className="text-white bg-gradient-to-br  shadow-xl  from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
                 style={{ display: "flex", alignItems: "center" }}
               >
                 <Image
@@ -113,6 +105,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 flexDirection: "column",
                 justifyContent: "center",
                 marginTop: "-12px",
+                color: "white",
               }}
             >
               {isAuthenticated ? "Connected" : "Not Connected"}

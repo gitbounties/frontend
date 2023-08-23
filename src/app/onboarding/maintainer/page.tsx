@@ -1,5 +1,4 @@
 "use client";
-
 import MultiStep from "@/components/Multistep";
 import Image from "next/image";
 import sampleMaintainerDashboard from "../../../../public/sampleMaintainerDashboard.png";
@@ -63,7 +62,7 @@ export default function Page() {
       <>
         {/* Step 2: Install Github App */}
         <div
-          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
+          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8 multi-step-content"
           style={{
             alignItems: "center",
             display: "block",
@@ -79,7 +78,7 @@ export default function Page() {
       <>
         {/* Step 3: Browse Issues */}
         <div
-          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
+          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8 multi-step-content"
           style={{
             alignItems: "center",
             display: "block",
@@ -113,7 +112,7 @@ export default function Page() {
       <>
         {/* Step 4: Convert into a bounty*/}
         <div
-          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
+          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8 multi-step-content"
           style={{
             alignItems: "center",
             display: "block",
@@ -143,7 +142,7 @@ export default function Page() {
       <>
         {/* Step 5: Contributor creates PR */}
         <div
-          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
+          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8 multi-step-content"
           style={{
             alignItems: "center",
             display: "block",
@@ -159,7 +158,7 @@ export default function Page() {
       <>
         {/* Step 6: You Merge PR */}
         <div
-          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
+          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8 multi-step-content"
           style={{
             alignItems: "center",
             display: "block",
