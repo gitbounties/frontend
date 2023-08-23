@@ -122,9 +122,16 @@ export default function IssueItem({
               <div className="block text-gray-700 text-sm font-bold mb-2">
                 Gas Fee:{" "}
               </div>
-              <button
+              {/* <button
                 type="submit"
                 className="bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                style={{ marginLeft: "45%" }}
+              >
+                Submit
+              </button> */}
+              <button
+                type="button"
+                className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
                 style={{ marginLeft: "45%" }}
               >
                 Submit
