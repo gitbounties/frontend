@@ -721,17 +721,35 @@ export default function Page() {
                 }}
               >
                 <div>
-                  You can browse your own github issues and turn them into
-                  bounties.
-                  <br />
-                  Below is an example of a dashboard for a maintainer. As you
-                  can see, the first issue is Active, so you can convert it into
-                  a bounty by clicking the "Convert into a bounty" button on the
-                  right. (More details on this will be explained in the next
-                  step)
-                  <br />
-                  The second issue is closed, which means you cannot convert it
-                  into a bounty.
+                  You have the opportunity to explore your own GitHub issues and
+                  transform them into bounties.
+                  <br></br>
+                  Below is an example designed for a maintainer. You'll notice
+                  that the first issue is marked as{" "}
+                  <b>
+                    <span
+                      style={{
+                        color: "green",
+                        backgroundColor: "lightgreen",
+                        borderRadius: "10px",
+                        padding: "2px 2px",
+                      }}
+                    >
+                      {" "}
+                      Active{" "}
+                    </span>
+                  </b>{" "}
+                  allowing you to convert it into a bounty by selecting the{" "}
+                  <b>
+                    <span style={{ color: "purple" }}>
+                      {" "}
+                      Convert into a bounty
+                    </span>
+                  </b>{" "}
+                  button located on the right-hand side. Further information
+                  about this process will be provided in the subsequent step. On
+                  the other hand, the second issue is marked as closed.
+                  Consequently, it cannot be converted into a bounty.
                 </div>
                 <br></br>
                 <div className="border-4 border-indigo-600 ...">
@@ -758,9 +776,15 @@ export default function Page() {
                 }}
               >
                 <div>
-                  Once you click on <b>Convert into a bounty</b>, a popup will
-                  appear on the screen, asking you how much reward you want to
-                  allocate,{" "}
+                  Once you click on{" "}
+                  <b>
+                    <span style={{ color: "purple" }}>
+                      {" "}
+                      Convert into a bounty
+                    </span>
+                  </b>
+                  , a popup will appear on the screen, asking you how much
+                  reward you want to allocate,{" "}
                   <b> (Note: there will be a gas fee included as well)</b>.
                   After submitting this popup, the amount will be deducted from
                   your Metamask wallet, and you will have successfully converted
