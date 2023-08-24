@@ -191,7 +191,7 @@ export default function Page() {
                   alignItems: "center",
                   display: "block",
                   justifyContent: "center",
-                  height: "30%",
+                  height: "50%",
                   width: "70%",
                   fontFamily: "Open Sans, sans-serif",
                 }}
@@ -663,15 +663,25 @@ export default function Page() {
                       fontFamily: "Open Sans, sans-serif",
                     }}
                   >
-                    <Image
-                      src={okay}
-                      alt="Connected"
-                      style={{ maxWidth: "100%", height: "auto" }}
-                    />
-                    <p> Connected</p>
+                    <div
+                      style={{ display: "flex", justifyContent: "flex-end" }}
+                    >
+                      <Image
+                        src={okay}
+                        alt="Connected"
+                        style={{
+                          maxWidth: "100%",
+                          height: "auto",
+                          marginLeft: "230px",
+                        }}
+                      />
+                    </div>
+                    <p style={{ marginLeft: "230px" }}> Connected</p>
                     <br></br>
                     <br></br>
-                    <p>Address: {address}</p>
+                    <p style={{ marginLeft: "230px", display: "flex" }}>
+                      Address: {address}
+                    </p>
                   </div>
                 )}
 
@@ -683,7 +693,6 @@ export default function Page() {
                     textAlign: "center",
                   }}
                 >
-                  <br></br>
                   <br></br>
                   As a maintainer, it is strongly recommended to connect to
                   Metamask since it allows you to create a bounty and put
