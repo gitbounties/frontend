@@ -84,74 +84,80 @@ export default function MultiStep({
       >
         {currentStep != 0 && (
           <button
-            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
+            className="text-white bg-gradient-to-br shadow-xl align-middle from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4  focus:outline-none focus:ring-blue-100 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             onClick={prevStep}
           >
             <div className="flex flex-row align-middle">
               <svg
-                className="w-5 mr-2"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+                className="w-5 h-5 transform rotate-180"
+                aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
               >
                 <path
-                  fill-rule="evenodd"
-                  d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
-                  clip-rule="evenodd"
-                ></path>
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
               </svg>
-              <p className="ml-2">Prev</p>
             </div>
           </button>
         )}
         {currentStep == 0 && (
           <button
             style={{ opacity: 0 }}
-            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
+            className="text-white bg-gradient-to-br shadow-xl  align-middle from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4  focus:outline-none focus:ring-blue-100 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             onClick={prevStep}
           >
             <div className="flex flex-row align-middle">
               <svg
-                className="w-5 mr-2"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+                className="w-5 h-5 transform rotate-180"
+                aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
               >
                 <path
-                  fill-rule="evenodd"
-                  d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
-                  clip-rule="evenodd"
-                ></path>
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
               </svg>
-              <p className="ml-2">Prev</p>
             </div>
           </button>
         )}
         {currentStep != children.length - 1 && (
           <button
-            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
+            className="text-white bg-gradient-to-br shadow-xl align-middle from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4  focus:outline-none focus:ring-blue-100 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             onClick={nextStep}
           >
             <div className="flex flex-row align-middle">
-              <span className="mr-2">Next</span>
               <svg
-                className="w-5 ml-2"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+                className="w-5 h-5"
+                aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
               >
                 <path
-                  fill-rule="evenodd"
-                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                ></path>
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
               </svg>
             </div>
           </button>
         )}
         {currentStep == children.length - 1 && (
           <button
-            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
+            className="text-white bg-gradient-to-br shadow-xl  align-middle from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4  focus:outline-none focus:ring-blue-100 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             onClick={nextStep}
           >
             <div className="flex flex-row align-middle">
