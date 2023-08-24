@@ -30,8 +30,9 @@ export default function Page() {
         // Step 1: connect to metamask
       }
       <>
+        <br></br>
         <div
-          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
+          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2  border-silver-200 mb-8 sm:p-8  dark:border-silver-700"
           style={{
             alignItems: "center",
             display: "block",
@@ -536,7 +537,7 @@ export default function Page() {
       <>
         {/* Step 2: Install Github App */}
         <div
-          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8 multi-step-content"
+          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 mb-8 multi-step-content dark:border-silver-700"
           style={{
             alignItems: "center",
             display: "block",
@@ -552,7 +553,7 @@ export default function Page() {
       <>
         {/* Step 3: Browse Issues */}
         <div
-          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8 multi-step-content"
+          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8 multi-step-content dark:border-silver-700"
           style={{
             alignItems: "center",
             display: "block",
@@ -586,7 +587,7 @@ export default function Page() {
       <>
         {/* Step 4: Convert into a bounty*/}
         <div
-          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8 multi-step-content"
+          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 dark:border-silver-700 mb-8 multi-step-content"
           style={{
             alignItems: "center",
             display: "block",
@@ -616,7 +617,7 @@ export default function Page() {
       <>
         {/* Step 5: Contributor creates PR */}
         <div
-          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8 multi-step-content"
+          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 dark:border-silver-700mb-8 multi-step-content"
           style={{
             alignItems: "center",
             display: "block",
@@ -632,7 +633,7 @@ export default function Page() {
       <>
         {/* Step 6: You Merge PR */}
         <div
-          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8 multi-step-content"
+          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 dark:border-silver-700 mb-8 multi-step-content"
           style={{
             alignItems: "center",
             display: "block",
@@ -646,7 +647,7 @@ export default function Page() {
       <>
         {/* Step 7: Contributor Gets Paid */}
         <div
-          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 border-gray-100 mb-8"
+          className="p-12 shadow-md rounded-2xl bg-white mx-auto border-solid border-2 dark:border-silver-700mb-8"
           style={{
             alignItems: "center",
             display: "block",
