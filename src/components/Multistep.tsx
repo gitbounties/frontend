@@ -84,7 +84,7 @@ export default function MultiStep({
       >
         {currentStep != 0 && (
           <button
-            className="text-white bg-gradient-to-br shadow-xl align-middle from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4  focus:outline-none focus:ring-blue-100 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="text-white bg-gradient-to-br shadow-xl align-middle from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-2  focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-400"
             onClick={prevStep}
           >
             <div className="flex flex-row align-middle">
@@ -109,7 +109,7 @@ export default function MultiStep({
         {currentStep == 0 && (
           <button
             style={{ opacity: 0 }}
-            className="text-white bg-gradient-to-br shadow-xl  align-middle from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4  focus:outline-none focus:ring-blue-100 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="text-white bg-gradient-to-br shadow-xl align-middle from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-2  focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-400"
             onClick={prevStep}
           >
             <div className="flex flex-row align-middle">
@@ -133,7 +133,7 @@ export default function MultiStep({
         )}
         {currentStep != children.length - 1 && (
           <button
-            className="text-white bg-gradient-to-br shadow-xl align-middle from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4  focus:outline-none focus:ring-blue-100 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="text-white bg-gradient-to-br shadow-xl align-middle from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-2  focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-400"
             onClick={nextStep}
           >
             <div className="flex flex-row align-middle">
@@ -157,7 +157,7 @@ export default function MultiStep({
         )}
         {currentStep == children.length - 1 && (
           <button
-            className="text-white bg-gradient-to-br shadow-xl  align-middle from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4  focus:outline-none focus:ring-blue-100 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="text-white bg-gradient-to-br shadow-xl  align-middle from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-2  focus:outline-none focus:ring-blue-100 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             onClick={nextStep}
           >
             <div className="flex flex-row align-middle">
