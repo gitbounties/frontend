@@ -107,7 +107,7 @@ export default function Home() {
         style={{
           display: "flex",
           alignItems: "center",
-          width: "15%",
+          // width: "15%",
         }}
         onClick={() => {
           window.location.href = GITHUB_REGISTER_URL;
@@ -132,7 +132,7 @@ export default function Home() {
           marginBottom: "20vh",
           display: "flex",
           alignItems: "center",
-          width: "15%",
+          // width: "15%",
         }}
         onClick={() => {
           window.location.href = GITHUB_LOGIN_URL;
