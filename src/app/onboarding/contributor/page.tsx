@@ -530,6 +530,8 @@ export default function Page() {
               textAlign: "center",
             }}
           >
+            <br></br>
+            <br></br>
             As a contributor, you must connect to Metamask so you can claim the
             bounties.
           </div>
@@ -548,7 +550,8 @@ export default function Page() {
             fontFamily: "Open Sans, sans-serif",
           }}
         >
-          <div>You can browse all the active issues to work on.</div>
+          <p>You can browse all the active issues to work on.</p>
+          <br></br>
           <div className="border-4 border-indigo-600 ...">
             <Image
               src={sampleContributorDashboard}
@@ -556,6 +559,7 @@ export default function Page() {
               width={sampleContributorDashboard.width}
               height={sampleContributorDashboard.height}
             />
+            <br></br>
           </div>
         </div>
       </>
@@ -572,9 +576,10 @@ export default function Page() {
             fontFamily: "Open Sans, sans-serif",
           }}
         >
+          Once you have choosed a bounty to work on, click on it and it will
+          take you to the actual issue page on Github.
           <div>
-            Once you have choosed a bounty to work on, click on it and it will
-            take you to the actual issue page on Github.
+            <br></br>
             <div className="border-4 border-indigo-600 ...">
               <Image
                 src={issuePage}
