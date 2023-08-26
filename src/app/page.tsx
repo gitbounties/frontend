@@ -90,6 +90,46 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 gradient__bg">
+      <header className="fixed w-full top-0 bg-black bg-opacity-30 backdrop-blur-sm transition duration-200 ease-in-out z-50">
+        <div className="md:max-w-full mx-auto w-full max-w-full px-8 sm:px-16 py-4">
+          <div className=" flex justify-between items-center">
+            <div className=" flex">
+              <a className="sm:w-[150px]" href="/"></a>
+            </div>
+            <div
+              className=" hidden md:flex space-x-10 ml-12"
+              style={{ fontSize: 200, marginLeft: "1100px" }}
+            >
+              <a
+                href="https://github.com/gitbounties"
+                className=" text-sm transition duration-200 ease-in-out font-light text-slate-300 hover:text-white"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://github.com/gitbounties"
+                className=" text-sm transition duration-200 ease-in-out font-light text-slate-300 hover:text-white"
+              >
+                Documentation
+              </a>
+              <a
+                href="/contact-us"
+                className=" text-sm transition duration-200 ease-in-out font-light text-slate-300 hover:text-white"
+              >
+                Contact
+              </a>
+              <a
+                href="/lol"
+                className=" text-sm transition duration-200 ease-in-out font-light text-slate-300 hover:text-white"
+              >
+                lol
+              </a>
+            </div>
+            <div className=" flex space-x-4"></div>
+          </div>
+        </div>
+      </header>
+
       <a
         style={{
           fontSize: 200,
@@ -150,6 +190,157 @@ export default function Home() {
         </svg>
         Login using Github
       </button>
+
+      <div className=" mx-auto ">
+        <div className="lg:pr-8 lg:pt-4">
+          <div className=" lg:max-w-lg">
+            <h1 className="gradient__text sm:text-4xl mt-16 sm:mt-0">
+              Revolutionizing Open Source Collaboration
+            </h1>
+            <p className="mt-6 text-lg font-light leading-8 text-gray-200">
+              Built upon a decentralized platform, GitBounties presents a
+              groundbreaking approach to incentivize and reward contributors for
+              their impactful work within repositories.
+            </p>
+            <dl className="jsx-be5904ba09669c67 mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-300 lg:max-w-none">
+              <div className="relative pl-16">
+                <dt className="inline font-semibold text-gray-100">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26"
+                    height="26"
+                    className="absolute left-0 top-2 h-10 w-10 text-indigo-300"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#61c6e1"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </dt>
+                <dd className=" inline">
+                  Contributors from various backgrounds and skill sets can
+                  engage in meaningful work, whether it's coding, documentation,
+                  testing, or design.
+                </dd>
+              </div>
+              <div className="relative pl-16">
+                <dt className="inline font-semibold text-gray-100">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26"
+                    className="absolute left-0 top-2 h-10 w-10 text-indigo-300"
+                    height="26"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#61c6e1"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                  </svg>
+                </dt>{" "}
+                <dd className=" inline">
+                  Contributors gain more than just financial rewards. For each
+                  merged issue, the contributor appears as an NFT in their
+                  wallet.
+                </dd>
+              </div>
+              <div className="relative pl-16">
+                <dt className="inline font-semibold text-gray-100">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26"
+                    height="26"
+                    className="absolute left-0 top-2 h-10 w-10 text-indigo-300"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#61c6e1"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20.2 7.8l-7.7 7.7-4-4-5.7 5.7" />
+                    <path d="M15 7h6v6" />
+                  </svg>
+                </dt>
+                <dd className="inline">
+                  GitBounties streamlines the process of recognition and
+                  compensation.
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      <section className="section">
+        <div className="m-horizontal mb-6 flex items-center justify-between md:mb-9">
+          <h2 style={{ fontSize: "50px" }} className="gradient__text">
+            <b>Learn More</b>
+          </h2>
+          <div className="flex gap-3 md:gap-4"></div>
+        </div>
+        <div className="no-scrollbar flex overflow-x-scroll scroll-smooth whitespace-nowrap px-5 xs:px-7 sm:px-9 xl:px-16 3xl:px-[calc((100%-1280px)/2)]">
+          <div className="justify-self-stretch mr-6 lg:mr-8 last:mr-0">
+            <div className="white-to-lighter-purple reveal-animation-1 overflow-hidden whitespace-normal border border-purple rounded-2xl md:rounded-4xl w-[300px] md:w-[380px] relative h-full ">
+              <div className="relative px-5 pt-6 pb-8 md:px-7 md:pt-8 md:pb-10">
+                <h3 className="mb-2 text-2xl font-bold text-black dark:text-white md:mb-3 md:text-3xl">
+                  What is a Decentralized platform
+                </h3>
+                <p className="mb-6 leading-relaxed text-white dark:text-lightPurple md:mb-9">
+                  Learn the fundamentals of Decentralized exchange and it's
+                  benefits/downsides.
+                </p>
+                <div className="relative cursor-pointer bg-white dark:bg-black rounded-full border border-purple dark:border-lightPurple undefined py-2.5 text-center w-full">
+                  <a
+                    href="https://www.youtube.com/watch?v=2tTVJL4bpTU"
+                    className="text-black dark:text-white"
+                  >
+                    Watch Video
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="justify-self-stretch mr-6 lg:mr-8 last:mr-0">
+            <div className="white-to-lighter-purple dark:black-to-dark-purple overflow-hidden whitespace-normal border border-purple rounded-2xl md:rounded-4xl w-[300px] md:w-[380px] relative h-full ">
+              <div className="relative px-5 pt-6 pb-8 md:px-7 md:pt-8 md:pb-10">
+                <h3 className="mb-2 text-2xl font-bold text-black dark:text-white md:mb-3 md:text-3xl">
+                  How it works?
+                </h3>
+                <p className="mb-6 leading-relaxed text-white dark:text-lightPurple md:mb-9">
+                  Watch our video * add the hackaton video
+                </p>
+                <div className="relative cursor-pointer bg-white dark:bg-black rounded-full border border-purple dark:border-lightPurple undefined py-2.5 text-center w-full">
+                  <p className="text-black dark:text-white">Watch Video</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="justify-self-stretch mr-6 lg:mr-8 last:mr-0">
+            <div className="white-to-lighter-purple dark:black-to-dark-purple overflow-hidden whitespace-normal border border-purple rounded-2xl md:rounded-4xl w-[300px] md:w-[380px] relative h-full ">
+              <div className="relative px-5 pt-6 pb-8 md:px-7 md:pt-8 md:pb-10">
+                <h3 className="mb-2 text-2xl font-bold text-black dark:text-white md:mb-3 md:text-3xl">
+                  soomething{" "}
+                </h3>
+                <p className="mb-6 leading-relaxed text-white dark:text-lightPurple md:mb-9">
+                  something else{" "}
+                </p>
+                <div className="relative cursor-pointer bg-white dark:bg-black rounded-full border border-purple dark:border-lightPurple undefined py-2.5 text-center w-full"></div>
+              </div>
+            </div>
+          </div>
+          <div className="justify-self-stretch mr-6 lg:mr-8 last:mr-0"></div>
+        </div>
+      </section>
     </main>
   );
 }
