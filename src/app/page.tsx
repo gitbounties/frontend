@@ -89,7 +89,7 @@ export default function Home() {
   const GITHUB_LOGIN_URL = `https://github.com/login/oauth/authorize?client_id=Iv1.95276d06092540d3&redirect_uri=${process.env.NEXT_PUBLIC_APP_URL}/auth/login`;
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 gradient__bg">
+    <main className="flex min-h-screen flex-col items-center justify-between p-24 gradient__bg ">
       <header className="fixed w-full top-0 bg-black bg-opacity-30 backdrop-blur-sm transition duration-200 ease-in-out z-50">
         <div className="md:max-w-full mx-auto w-full max-w-full px-8 sm:px-16 py-4">
           <div className=" flex justify-between items-center">

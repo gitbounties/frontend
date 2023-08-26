@@ -65,6 +65,10 @@
   background: -moz-radial-gradient(
     circle at 10% 50%,
     rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 50%,
+
+    circle at 90% 40%,
+    rgba(0, 40, 83, 1) 0%,
     rgba(4, 12, 24, 1) 50%
   );
 
@@ -81,7 +85,6 @@
     rgba(26, 121, 223) 0%,
     rgba(4, 12, 24, 1) 30%
   );
-
   /* ie 10+ */
   background: -ms-radial-gradient(
     circle at 10% 50%,
@@ -91,8 +94,9 @@
 
   /* global 92%+ browsers support */
   background: radial-gradient(
-    circle at 10% 50%,
-    rgba(26, 121, 223) 0%,
-    rgba(4, 12, 24, 1) 30%
+    circle at -20% 40%,
+    rgba(26, 121, 223) -20%,
+    rgba(4, 12, 24, 1) 30%,
+    rgba(255, 192, 203, 1) 230%
   );
 }
