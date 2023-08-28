@@ -12,19 +12,8 @@ import sampleMaintainerDashboard from "../../../../public/sampleMaintainerDashbo
 import bountyConvert from "../../../../public/bountyConvert.png";
 import okay from "../../../../public/okayOnce.gif";
 import { IWeb3Context, useWeb3Context } from "@/context/Web3ContextProvider";
-
-interface Issue {
-  issue_id: number;
-  owner: string;
-  repo: string;
-}
-
-interface GithubIssue {
-  author: string;
-  description: string;
-  title: string;
-  issue: Issue;
-}
+import { GithubIssue } from "@types/api";
+import { Issue } from "@/types/api";
 
 export type createBountyFn = (issue: Issue, reward: number) => Promise<void>;
 
@@ -51,6 +40,7 @@ export default function Page() {
   console.log(contract);
 
   const createBounty = async (issue: Issue, reward: number): Promise<void> => {
+    console.log("creatBounty func");
     // mint NFT for user
     const tokenId = await mintNFT(contract);
     console.log("minted token with id", tokenId);

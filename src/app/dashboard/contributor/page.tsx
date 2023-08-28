@@ -1,6 +1,6 @@
 "use client";
 import Data from "./issueInformation.json";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Popup from "reactjs-popup";
 import MultiStep from "@/components/Multistep";
 import sampleContributorDashboard from "../../../../public/sampleContributorDashboard.png";
@@ -8,9 +8,37 @@ import issuePage from "../../../../public/issuePage.png";
 import okay from "../../../../public/okayOnce.gif";
 import { IWeb3Context, useWeb3Context } from "@/context/Web3ContextProvider";
 import Image from "next/image";
+import { Bounty } from "@types/api";
 
 export default function App() {
   const [query, setQuery] = useState("");
+
+  const [bounties, setBounties] = useState<Bounty[]>([]);
+
+  if (process.env.NEXT_PUBLIC_USE_DUMMY_API == "true") {
+  } else {
+    useEffect(() => {
+      // TODO pretty duplicated from maintainer page
+      const fetchIssues = async () => {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/bounty`, {
+          method: "get",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        });
+
+        const body: Bounty[] = await res.json();
+
+        setBounties(() => body);
+
+        console.log("body", body);
+      };
+
+      fetchIssues().catch(console.error);
+    }, []);
+  }
 
   const {
     connectWallet,
@@ -768,9 +796,9 @@ export default function App() {
             <div className="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200 relative overflow-x-auto shadow-md sm:rounded-lg">
               <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <caption className="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
-                  Issues
+                  Bounties
                   <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-                    Browse a list of issues that are active and need to be
+                    Browse a list of bounties that are active and need to be
                     worked on.
                   </p>
                 </caption>
